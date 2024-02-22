@@ -26,7 +26,12 @@ export default function App() {
     } else {
       clearInterval(intervall);
     }
-
+    if (time === 0) {
+      setIsActiv(false);
+      setTime(isWorking ? 300 :1500)
+      setIsWorcking(prev=>!prev);
+      
+    }
     return () => clearInterval(intervall);
   }, [isActiv, time]);
   function handlerStartAtaop() {
